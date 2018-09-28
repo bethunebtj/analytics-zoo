@@ -15,15 +15,15 @@
 
     <properties>
         <maven-enforcer-plugin.version>1.3.1</maven-enforcer-plugin.version>
-        <java.version>1.7</java.version>
-        <javac.version>1.7</javac.version>
+        <java.version>1.8</java.version>
+        <javac.version>1.8</javac.version>
         <spark-scope>provided</spark-scope>
         <bigdl-scope>compile</bigdl-scope>
         <scala.major.version>2.11</scala.major.version>
         <scala.version>2.11.8</scala.version>
         <scala.macros.version>2.1.0</scala.macros.version>
         <scalatest.version>2.2.4</scalatest.version>
-        <spark.version>2.1.0</spark.version>
+        <spark.version>2.3.1</spark.version>
         <bigdl.version>0.6.0</bigdl.version>
     </properties>
 
@@ -35,18 +35,18 @@
     </distributionManagement>
 
     <profiles>
-        <profile>
-            <id>spark_1.6</id>
-            <properties>
-                <spark-version.project>1.6-plus</spark-version.project>
-                <spark.version>1.6.3</spark.version>
-                <scala.major.version>2.10</scala.major.version>
-                <scala.version>2.10.5</scala.version>
-                <scala.macros.version>2.0.1</scala.macros.version>
-                <scalatest.version>2.2.4</scalatest.version>
-                <bigdl.artifactId>bigdl-SPARK_1.6</bigdl.artifactId>
-            </properties>
-        </profile>
+        <!--<profile>-->
+            <!--<id>spark_1.6</id>-->
+            <!--<properties>-->
+                <!--<spark-version.project>1.6-plus</spark-version.project>-->
+                <!--<spark.version>1.6.3</spark.version>-->
+                <!--<scala.major.version>2.10</scala.major.version>-->
+                <!--<scala.version>2.10.5</scala.version>-->
+                <!--<scala.macros.version>2.0.1</scala.macros.version>-->
+                <!--<scalatest.version>2.2.4</scalatest.version>-->
+                <!--<bigdl.artifactId>bigdl-SPARK_1.6</bigdl.artifactId>-->
+            <!--</properties>-->
+        <!--</profile>-->
 
         <profile>
             <id>spark_2.x</id>
@@ -81,14 +81,14 @@
             </properties>
         </profile>
         <!-- put this profile after spark_2.x profile -->
-        <profile>
-            <id>scala_2.10</id>
-            <properties>
-                <scala.major.version>2.10</scala.major.version>
-                <scala.version>2.10.5</scala.version>
-                <scala.macros.version>2.0.1</scala.macros.version>
-            </properties>
-        </profile>
+        <!--<profile>-->
+            <!--<id>scala_2.10</id>-->
+            <!--<properties>-->
+                <!--<scala.major.version>2.10</scala.major.version>-->
+                <!--<scala.version>2.10.5</scala.version>-->
+                <!--<scala.macros.version>2.0.1</scala.macros.version>-->
+            <!--</properties>-->
+        <!--</profile>-->
 
         <profile>
             <id>all-in-one</id>
@@ -200,8 +200,10 @@
         <dependency>
             <groupId>org.scala-lang</groupId>
             <artifactId>scala-library</artifactId>
-            <version>${scala.version}</version>
-            <scope>${spark-scope}</scope>
+            <!--<version>${scala.version}</version>-->
+            <!--<scope>${spark-scope}</scope>-->
+            <version>2.11.8</version>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.scala-lang</groupId>
