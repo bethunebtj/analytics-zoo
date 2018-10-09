@@ -162,8 +162,8 @@ object WideAndDeepExample {
     val genresList = Array("Crime", "Romance", "Thriller", "Adventure", "Drama", "Children's",
       "War", "Documentary", "Fantasy", "Mystery", "Musical", "Animation", "Film-Noir", "Horror",
       "Western", "Comedy", "Action", "Sci-Fi")
-//    val genresUDF = udf(Utils.categoricalFromVocabList(genresList))
-    val genresUDF = udf((genresArray:Seq[String]) =>{
+    //    val genresUDF = udf(Utils.categoricalFromVocabList(genresList))
+    val genresUDF = udf((genresArray: Seq[String]) => {
       genresArray.map(Utils.categoricalFromVocabList(genresList))
     })
 

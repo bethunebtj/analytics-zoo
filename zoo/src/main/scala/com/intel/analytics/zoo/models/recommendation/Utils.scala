@@ -144,12 +144,12 @@ object Utils {
     deepTensor
   }
 
-  /**
-    * define an implicit function so that we can use all kinds of value in continuousCols.
+/** define an implicit function so that we can use all kinds of value in continuousCols.
+    *
     * @param x the input value ,maybe an integer or a long value.
     * @return the float represent of input value
     */
-  implicit def AnyValToFloat(x:AnyVal):Float = {
+  implicit def anyValToFloat(x: AnyVal): Float = {
     x match {
       case i: Int => i.toFloat
       case l: Long => l.toFloat
